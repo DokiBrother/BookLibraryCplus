@@ -397,6 +397,7 @@ int main() {
                 getline(cin, ISBN);
                 library.addBook(Book(title, author, ISBN));
                 cout<<"\n";
+                cout<<"\t\t";
                 system("PAUSE");
                 break;
             }
@@ -407,6 +408,7 @@ int main() {
                 getline(cin, ISBN);
                 library.checkOutBook(ISBN);
                 cout<<"\n";
+                cout<<"\t\t";
                 system("PAUSE");
                 break;
             }
@@ -418,18 +420,21 @@ int main() {
                 library.returnBook(ISBN);
                 library.writeToFile("books.txt"); // Write the updated list of available books to the file
                 cout<<"\n";
+                cout<<"\t\t";
                 system("PAUSE");
                 break;
             }
             case 4: {
                 library.sortByTitle();
                 cout<<"\n";
+                cout<<"\t\t";
                 system("PAUSE");
                 break;
             }
             case 5: {
                 library.sortByAuthor();
                 cout<<"\n";
+                cout<<"\t\t";
                 system("PAUSE");
                 break;
             }
@@ -445,6 +450,7 @@ int main() {
                 library.updateBook(ISBN, title, author);
                 cout << "\n" << endl;
                 cout<<"\n";
+                cout<<"\t\t";
                 system("PAUSE");
                 break;
             }
@@ -455,6 +461,7 @@ int main() {
                 getline(cin, ISBN);
                 library.deleteBook(ISBN);
                 cout<<"\n";
+                cout<<"\t\t";
                 system("PAUSE");
                 break;
             }
@@ -465,6 +472,7 @@ int main() {
                 getline(cin, title);
                 library.searchByTitle(title);
                 cout<<"\n";
+                cout<<"\t\t";
                 system("PAUSE");
                 break;
             }
@@ -475,12 +483,14 @@ int main() {
                 getline(cin, author);
                 library.searchByAuthor(author);
                 cout<<"\n";
+                cout<<"\t\t";
                 system("PAUSE");
                 break;
             }
             case 10: {
                 library.displayAllBooks();
                 cout<<"\n";
+                cout<<"\t\t";
                 system("PAUSE");
                 break;
             }
@@ -491,6 +501,7 @@ int main() {
                 getline(cin, fileName);
                 library.readFromFile(fileName);
                 cout<<"\n";
+                cout<<"\t\t";
                 system("PAUSE");
                 break;
             }
@@ -501,18 +512,21 @@ int main() {
                 getline(cin, fileName);
                 library.writeToFile(fileName);
                 cout<<"\n";
+                cout<<"\t\t";
                 system("PAUSE");
                 break;
             }
             case 13: {
                 cout << "\t\tThank you for using the library. Goodbye!" << endl;
                 cout<<"\n";
+                cout<<"\t\t";
                 system("PAUSE");
                 break;
             }
             default: {
                 cout << "\t\tInvalid choice. Please try again." << endl;
                 cout<<"\n";
+                cout<<"\t\t";
                 system("PAUSE");
                 break;
             }
