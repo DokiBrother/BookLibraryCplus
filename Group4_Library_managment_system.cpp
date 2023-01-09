@@ -243,18 +243,22 @@ public:
         }
     }
 
-    const char Aseparator='=';
+    const char Aseparator='-';
     const char separator=' ';
     void displayAllBooks() {
+    	cout << "\t\t";
         cout << right<<setw(43)<<setfill(Aseparator)<<"AVAILABLE BOOKS"
              << right<<setw(31)<<setfill(Aseparator)<<""<< endl;
-        cout<<"The maximum number of books a library can contain: 1000 books"<<endl;
+        cout<<"\t\tThe maximum number of books a library can contain: 1000 books\n"<<endl;
+        cout << "\t\t";
         cout<<left<<setw(25)<<setfill(Aseparator)<<"Title"
             <<left<<setw(25)<<setfill(Aseparator)<<"Author"
             <<left<<setw(25)<<setfill(Aseparator)<<"ISBN"
             <<endl;
+        cout<< "\n";
         for (int i = 0; i < NUM_BOOKS; i++) {
             if (!availableBooks[i].checkedOut) {
+            	cout << "\t\t";
                 cout<<left<<setw(25)<<setfill(separator)<<availableBooks[i].title
                     <<left<<setw(25)<<setfill(separator)<<availableBooks[i].author
                     <<left<<setw(25)<<setfill(separator)<<availableBooks[i].ISBN
@@ -264,9 +268,11 @@ public:
 
         int size = checkedOutBooks.size();
         if(NUM_BOOKS!=0){
-            cout << endl<<right<<setw(47)<<setfill(Aseparator)<<"CHECKED OUT BOOKS"
+        	cout << "\n\t\t";
+            cout <<right<<setw(47)<<setfill(Aseparator)<<"CHECKED OUT BOOKS"
                  << right<<setw(27)<<setfill(Aseparator)<<""<< endl;
-            cout<<"Total book of library: "<<size<<endl;
+            cout<<"\t\tTotal book of library: "<<size<<endl;
+            cout << "\n\t\t";
             cout<<left<<setw(25)<<setfill(Aseparator)<<"Title"
                 <<left<<setw(25)<<setfill(Aseparator)<<"Author"
                 <<left<<setw(25)<<setfill(Aseparator)<<"ISBN"
@@ -275,6 +281,7 @@ public:
 
         for (int i = 0; i < size; i++) {
             Book book = checkedOutBooks.front();
+            cout << "\n\t\t";
             cout<<left<<setw(25)<<setfill(separator)<<book.title
                 <<left<<setw(25)<<setfill(separator)<<book.author
                 <<left<<setw(25)<<setfill(separator)<<book.ISBN
@@ -468,12 +475,12 @@ int main() {
         switch(choice) {
             case 1: {
                 string title, author, ISBN;
-                cout << "Enter the title of the book: ";
+                cout << "\t\tEnter the title of the book: ";
                 cin.ignore();
                 getline(cin, title);
-                cout << "Enter the author of the book: ";
+                cout << "\t\tEnter the author of the book: ";
                 getline(cin, author);
-                cout << "Enter the ISBN of the book: ";
+                cout << "\t\tEnter the ISBN of the book: ";
                 getline(cin, ISBN);
                 library.addBook(Book(title, author, ISBN));
                 library.clear();
@@ -481,7 +488,7 @@ int main() {
             }
             case 2: {
                 string ISBN;
-                cout << "Enter the ISBN of the book you want to check out: ";
+                cout << "\t\tEnter the ISBN of the book you want to check out: ";
                 cin.ignore();
                 getline(cin, ISBN);
                 library.checkOutBook(ISBN);
@@ -490,7 +497,7 @@ int main() {
             }
             case 3: {
                 string ISBN;
-                cout << "Enter the ISBN of the book you want to return: ";
+                cout << "\t\tEnter the ISBN of the book you want to return: ";
                 cin.ignore();
                 getline(cin, ISBN);
                 library.returnBook(ISBN);
@@ -520,12 +527,12 @@ int main() {
             }
             case 8:{
                 string title, author, ISBN;
-                cout << "Enter the ISBN of the book you want to update: ";
+                cout << "\t\tEnter the ISBN of the book you want to update: ";
                 cin.ignore();
                 getline(cin, ISBN);
-                cout << "Enter the new title of the book: ";
+                cout << "\t\tEnter the new title of the book: ";
                 getline(cin, title);
-                cout << "Enter the new author of the book: ";
+                cout << "\t\tEnter the new author of the book: ";
                 getline(cin, author);
                 library.updateBook(ISBN, title, author);
                 library.clear();
@@ -533,7 +540,7 @@ int main() {
             }
             case 9: {
                 string ISBN;
-                cout << "Enter the ISBN of the book you want to delete: ";
+                cout << "\t\tEnter the ISBN of the book you want to delete: ";
                 cin.ignore();
                 getline(cin, ISBN);
                 library.deleteBook(ISBN);
@@ -542,7 +549,7 @@ int main() {
             }
             case 10:{
                 string title;
-                cout << "Enter the title of the book you want to search for: ";
+                cout << "\t\tEnter the title of the book you want to search for: ";
                 cin.ignore();
                 getline(cin, title);
                 library.searchByTitle(title);
@@ -551,7 +558,7 @@ int main() {
             }
             case 11:{
                 string author;
-                cout << "Enter the author of the book you want to search for: ";
+                cout << "\t\tEnter the author of the book you want to search for: ";
                 cin.ignore();
                 getline(cin, author);
                 library.searchByAuthor(author);
@@ -565,7 +572,7 @@ int main() {
             }
             case 13: {
                 string fileName;
-                cout << "Enter the name of the file you want to read from: ";
+                cout << "\t\tEnter the name of the file you want to read from: ";
                 cin.ignore();
                 getline(cin, fileName);
                 library.readFromFile(fileName);
@@ -574,7 +581,7 @@ int main() {
             }
             case 14: {
                 string fileName;
-                cout << "Enter the name of the file you want to write to: ";
+                cout << "\t\tEnter the name of the file you want to write to: ";
                 cin.ignore();
                 getline(cin, fileName);
                 library.writeToFile(fileName);
@@ -582,12 +589,12 @@ int main() {
                 break;
             }
             case 15: {
-                cout << "Thank you for using the library. Goodbye!" << endl;
+                cout << "\t\tThank you for using the library. Goodbye!" << endl;
                 library.clear();
                 break;
             }
             default: {
-                cout << "Invalid choice. Please try again." << endl;
+                cout << "\t\tInvalid choice. Please try again." << endl;
                 system("PAUSE");
                 break;
             }
