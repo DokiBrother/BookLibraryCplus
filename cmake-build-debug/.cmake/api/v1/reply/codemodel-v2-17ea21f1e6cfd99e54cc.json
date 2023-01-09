@@ -1,0 +1,60 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.23"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Group_4_Code_Library_managment_system",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Group_4_Code_Library_managment_system::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Group_4_Code_Library_managment_system-Debug-cf5449717c8b6522088d.json",
+					"name" : "Group_4_Code_Library_managment_system",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/duatt/OneDrive/Desktop/Group4_Final_Project-INS3050/Group 4 Code Library managment system/cmake-build-debug",
+		"source" : "C:/Users/duatt/OneDrive/Desktop/Group4_Final_Project-INS3050/Group 4 Code Library managment system"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}
