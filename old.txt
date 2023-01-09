@@ -1,5 +1,5 @@
-Art Gin 6
-WarLord Alex 13
-NewLife Kododawa 7
-MeOi Thanh 9
-Starlight Rin 4
+Art,Gin,6
+War Lord,Alex,13
+New Life,Kododawa,7
+Me Oi,Thanh,9
+Starlight,Rin,4
