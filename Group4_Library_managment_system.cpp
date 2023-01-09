@@ -463,6 +463,7 @@ int main() {
         cout << "\t\tPress 15. Quit" << endl;
         cout<<"\n\t\tEnter your choice: ";
         cin >> choice;
+        cout<<endl;
 
         switch(choice) {
             case 1: {
