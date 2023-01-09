@@ -80,9 +80,9 @@ public:
         if (NUM_BOOKS < MAX_BOOKS) {
             availableBooks[NUM_BOOKS] = book;
             NUM_BOOKS++;
-            cout << "Book added to the library." << endl;
+            cout << "\t\tBook added to the library." << endl;
         } else {
-            cout << "Error: The library is full. Cannot add more books." << endl;
+            cout << "\t\tError: The library is full. Cannot add more books." << endl;
         }
     }
 
@@ -93,14 +93,14 @@ public:
             if (availableBooks[i].ISBN == ISBN && !availableBooks[i].checkedOut) {
                 availableBooks[i].checkedOut = true;
                 checkedOutBooks.push(availableBooks[i]);
-                cout << "Book checked out." << endl;
+                cout << "\t\tBook checked out." << endl;
                 found = true;
                 NUM_BOOKS--;
                 break;
             }
         }
         if (!found) {
-            cout << "Book not found or already checked out." << endl;
+            cout << "\t\tBook not found or already checked out." << endl;
         }
     }
 
@@ -127,7 +127,7 @@ public:
             NUM_BOOKS++;
         }
         if (!found) {
-            cout << "Sorry, that book is not checked out." << endl;
+            cout << "\t\tSorry, that book is not checked out." << endl;
         }
     }
 
@@ -143,7 +143,7 @@ public:
                 }
             }
         }
-        cout << "Books sorted by title." << endl;
+        cout << "\t\tBooks sorted by title." << endl;
     }
 
 // Function to sort books by author
@@ -157,7 +157,7 @@ public:
                 }
             }
         }
-        cout << "Books sorted by author." << endl;
+        cout << "\t\tBooks sorted by author." << endl;
     }
 
 //  Function to update a book's information
@@ -168,12 +168,12 @@ public:
                 found = true;
                 availableBooks[i].title = newTitle;
                 availableBooks[i].author = newAuthor;
-                cout << "Book information updated." << endl;
+                cout << "\t\tBook information updated." << endl;
                 break;
             }
         }
         if (!found) {
-            cout << "Sorry, that book was not found." << endl;
+            cout << "\t\tSorry, that book was not found." << endl;
         }
     }
 
@@ -187,13 +187,13 @@ public:
                     availableBooks[j] = availableBooks[j + 1];
                 }
                 NUM_BOOKS--;
-                cout << "Book deleted." << endl;
+                cout << "\t\tBook deleted." << endl;
                 found = true;
                 break;
             }
         }
         if (!found) {
-            cout << "Book not found." << endl;
+            cout << "\t\tBook not found." << endl;
         }
     }
 
@@ -244,7 +244,7 @@ public:
         ifstream inFile;
         inFile.open(fileName);
         if (!inFile) {
-            cout << "Error opening file." << endl;
+            cout << "\t\tError opening file." << endl;
             return;
         }
 
@@ -278,7 +278,7 @@ public:
             temp.pop();
         }
         outFile.close();
-        cout << "Checked out books written to file." << endl;
+        cout << "\t\tChecked out books written to file." << endl;
     }
 
     void searchByTitle(string title) {
@@ -286,9 +286,9 @@ public:
         queue<Book> temp;
         while (!checkedOutBooks.empty()) {
             if (checkedOutBooks.front().title == title) {
-                cout << "Title   : " << checkedOutBooks.front().title << endl;
-                cout << "Author  : " << checkedOutBooks.front().author << endl;
-                cout << "ISBN    : " << checkedOutBooks.front().ISBN << endl;
+                cout << "\t\tTitle   : " << checkedOutBooks.front().title << endl;
+                cout << "\t\tAuthor  : " << checkedOutBooks.front().author << endl;
+                cout << "\t\tISBN    : " << checkedOutBooks.front().ISBN << endl;
                 found = true;
                 break;
             }
@@ -302,14 +302,14 @@ public:
         // Search through available books
         for (int i = 0; i < NUM_BOOKS; i++) {
             if (availableBooks[i].title == title && !availableBooks[i].checkedOut) {
-                cout << "Title   : " << availableBooks[i].title << endl;
-                cout << "Author  : " << availableBooks[i].author << endl;
-                cout << "ISBN    : " << availableBooks[i].ISBN << endl;
+                cout << "\t\tTitle   : " << availableBooks[i].title << endl;
+                cout << "\t\tAuthor  : " << availableBooks[i].author << endl;
+                cout << "\t\tISBN    : " << availableBooks[i].ISBN << endl;
                 found = true;
             }
         }
         if (!found) {
-            cout << "Sorry, no books with that title are checked out." << endl;
+            cout << "\t\tSorry, no books with that title are checked out." << endl;
         }
     }
 
@@ -320,9 +320,9 @@ public:
         // Search through available books
         for (int i = 0; i < NUM_BOOKS; i++) {
             if (availableBooks[i].author == author && !availableBooks[i].checkedOut) {
-                cout << "Title   : " << availableBooks[i].title << endl;
-                cout << "Author  : " << availableBooks[i].author << endl;
-                cout << "ISBN    : " << availableBooks[i].ISBN << endl;
+                cout << "\t\tTitle   : " << availableBooks[i].title << endl;
+                cout << "\t\tAuthor  : " << availableBooks[i].author << endl;
+                cout << "\t\tISBN    : " << availableBooks[i].ISBN << endl;
                 found = true;
             }
         }
@@ -330,9 +330,9 @@ public:
         queue<Book> temp;
         while (!checkedOutBooks.empty()) {
             if (checkedOutBooks.front().author == author) {
-                cout << "Title   : " << checkedOutBooks.front().title << endl;
-                cout << "Author  : " << checkedOutBooks.front().author << endl;
-                cout << "ISBN    : " << checkedOutBooks.front().ISBN << endl;
+                cout << "\t\tTitle   : " << checkedOutBooks.front().title << endl;
+                cout << "\t\tAuthor  : " << checkedOutBooks.front().author << endl;
+                cout << "\t\tISBN    : " << checkedOutBooks.front().ISBN << endl;
                 found = true;
             }
             temp.push(checkedOutBooks.front());
@@ -344,17 +344,16 @@ public:
             temp.pop();
         }
         if (!found) {
-            cout << "Sorry, no books by that author are available or checked out." << endl;
+            cout << "\t\tSorry, no books by that author are available or checked out." << endl;
         }
     }
     void intro()
     {
-        cout<<"   LIBRARY MANAGEMENT SYSTEM "<<endl;
-        cout<<"Group Members:           "<<endl;
-        cout<<"NGUYEN THI NGOC GIAO    20070704"<<endl;
-        cout<<"TRAN VAN DUAT           19071591"<<endl;
-        cout<<"PHAM TIEN PHU           19071623"<<endl;
-        cout<<"DO CONG TUAN            19071639"<<endl;
+        cout<<"\t\t   created by "<<endl;
+        cout<<"\tTRAN VAN DUAT           19071591"<<endl;
+        cout<<"\tNGUYEN THI NGOC GIAO    20070704"<<endl;
+        cout<<"\tPHAM TIEN PHU           19071623"<<endl;
+        cout<<"\tDO CONG TUAN            19071639"<<endl;
     }
 };
 
@@ -367,32 +366,34 @@ int main() {
     while (choice != 13) {
     	system("cls");
     	library.intro();
-        cout << "\nWelcome to the library. What would you like to do?" << endl;
-        cout << "Press 1.  Add a book to the library" << endl;
-        cout << "Press 2.  Check out a book" << endl;
-        cout << "Press 3.  Return a book" << endl;
-        cout << "Press 4.  Sort books by title" << endl;
-        cout << "Press 5.  Sort books by author" << endl;
-        cout << "Press 6.  Update a book" << endl;
-        cout << "Press 7.  Delete a book" << endl;
-        cout << "Press 8.  Search for a book by title" << endl;
-        cout << "Press 9.  Search for a book by author" << endl;
-        cout << "Press 10. Display all books" << endl;
-        cout << "Press 11. Read books from a file" << endl;
-        cout << "Press 12. Write books to a file" << endl;
-        cout << "Press 13. Quit" << endl;
-        cout<<"\nEnter your choice: ";
+    	cout<<"\n\t\t**********---------- LIBRARY MANAGEMENT SYSTEM --------*********"<<endl;
+    	cout<<"\t\t**********---------------------------------------------**********\n\n";
+		cout<<"\t\t-----------------------------WELCOME-----------------------------\n\n";
+        cout << "\t\tPress 1.  Add a book to the library" << endl;
+        cout << "\t\tPress 2.  Check out a book" << endl;
+        cout << "\t\tPress 3.  Return a book" << endl;
+        cout << "\t\tPress 4.  Sort books by title" << endl;
+        cout << "\t\tPress 5.  Sort books by author" << endl;
+        cout << "\t\tPress 6.  Update a book" << endl;
+        cout << "\t\tPress 7.  Delete a book" << endl;
+        cout << "\t\tPress 8.  Search for a book by title" << endl;
+        cout << "\t\tPress 9.  Search for a book by author" << endl;
+        cout << "\t\tPress 10. Display all books" << endl;
+        cout << "\t\tPress 11. Read books from a file" << endl;
+        cout << "\t\tPress 12. Write books to a file" << endl;
+        cout << "\t\tPress 13. Quit" << endl;
+        cout<<"\n\t\tEnter your choice: ";
         cin >> choice;
         cout<<"\n";
         switch(choice) {
             case 1: {
                 string title, author, ISBN;
-                cout << "Enter the title of the book: ";
+                cout << "\t\tEnter the title of the book: ";
                 cin.ignore();
                 getline(cin, title);
-                cout << "Enter the author of the book: ";
+                cout << "\t\tEnter the author of the book: ";
                 getline(cin, author);
-                cout << "Enter the ISBN of the book: ";
+                cout << "\t\tEnter the ISBN of the book: ";
                 getline(cin, ISBN);
                 library.addBook(Book(title, author, ISBN));
                 cout<<"\n";
@@ -401,7 +402,7 @@ int main() {
             }
             case 2: {
                 string ISBN;
-                cout << "Enter the ISBN of the book you want to check out: ";
+                cout << "\t\tEnter the ISBN of the book you want to check out: ";
                 cin.ignore();
                 getline(cin, ISBN);
                 library.checkOutBook(ISBN);
@@ -411,7 +412,7 @@ int main() {
             }
             case 3: {
                 string ISBN;
-                cout << "Enter the ISBN of the book you want to return: ";
+                cout << "\t\tEnter the ISBN of the book you want to return: ";
                 cin.ignore();
                 getline(cin, ISBN);
                 library.returnBook(ISBN);
@@ -434,12 +435,12 @@ int main() {
             }
             case 6:{
                 string title, author, ISBN;
-                cout << "Enter the ISBN of the book you want to update: ";
+                cout << "\t\tEnter the ISBN of the book you want to update: ";
                 cin.ignore();
                 getline(cin, ISBN);
-                cout << "Enter the new title of the book: ";
+                cout << "\t\tEnter the new title of the book: ";
                 getline(cin, title);
-                cout << "Enter the new author of the book: ";
+                cout << "\t\tEnter the new author of the book: ";
                 getline(cin, author);
                 library.updateBook(ISBN, title, author);
                 cout << "\n" << endl;
@@ -449,7 +450,7 @@ int main() {
             }
             case 7: {
                 string ISBN;
-                cout << "Enter the ISBN of the book you want to delete: ";
+                cout << "\t\tEnter the ISBN of the book you want to delete: ";
                 cin.ignore();
                 getline(cin, ISBN);
                 library.deleteBook(ISBN);
@@ -459,7 +460,7 @@ int main() {
             }
             case 8:{
                 string title;
-                cout << "Enter the title of the book you want to search for: ";
+                cout << "\t\tEnter the title of the book you want to search for: ";
                 cin.ignore();
                 getline(cin, title);
                 library.searchByTitle(title);
@@ -469,7 +470,7 @@ int main() {
             }
             case 9:{
                 string author;
-                cout << "Enter the author of the book you want to search for: ";
+                cout << "\t\tEnter the author of the book you want to search for: ";
                 cin.ignore();
                 getline(cin, author);
                 library.searchByAuthor(author);
@@ -485,7 +486,7 @@ int main() {
             }
             case 11: {
                 string fileName;
-                cout << "Enter the name of the file you want to read from: ";
+                cout << "\t\tEnter the name of the file you want to read from: ";
                 cin.ignore();
                 getline(cin, fileName);
                 library.readFromFile(fileName);
@@ -495,7 +496,7 @@ int main() {
             }
             case 12: {
                 string fileName;
-                cout << "Enter the name of the file you want to write to: ";
+                cout << "\t\tEnter the name of the file you want to write to: ";
                 cin.ignore();
                 getline(cin, fileName);
                 library.writeToFile(fileName);
@@ -504,13 +505,13 @@ int main() {
                 break;
             }
             case 13: {
-                cout << "Thank you for using the library. Goodbye!" << endl;
+                cout << "\t\tThank you for using the library. Goodbye!" << endl;
                 cout<<"\n";
                 system("PAUSE");
                 break;
             }
             default: {
-                cout << "Invalid choice. Please try again." << endl;
+                cout << "\t\tInvalid choice. Please try again." << endl;
                 cout<<"\n";
                 system("PAUSE");
                 break;
