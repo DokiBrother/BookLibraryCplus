@@ -278,10 +278,10 @@ public:
                 <<left<<setw(25)<<setfill(Aseparator)<<"ISBN"
                 <<endl;
         }
-
+		cout<< "\n";
         for (int i = 0; i < size; i++) {
             Book book = checkedOutBooks.front();
-            cout << "\n\t\t";
+            cout << "\t\t";
             cout<<left<<setw(25)<<setfill(separator)<<book.title
                 <<left<<setw(25)<<setfill(separator)<<book.author
                 <<left<<setw(25)<<setfill(separator)<<book.ISBN
