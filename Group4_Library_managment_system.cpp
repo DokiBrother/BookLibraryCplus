@@ -474,16 +474,16 @@ public:
             for (int i = 0; i < NUM_BOOKS; i++) {
                 outFile << availableBooks[i].title << "," << availableBooks[i].author << "," << availableBooks[i].ISBN << endl;
             }
-            // Write the records of the checked out books to the file
-            int size = checkedOutBooks.size();
-            for (int i = 0; i < size; i++) {
-                Book book = checkedOutBooks.front();
-                outFile << book.title << "," << book.author << "," << book.ISBN << endl;
-                checkedOutBooks.pop();
-                checkedOutBooks.push(book);
-            }
+//            // Write the records of the checked out books to the file
+//            int size = checkedOutBooks.size();
+//            for (int i = 0; i < size; i++) {
+//                Book book = checkedOutBooks.front();
+//                outFile << book.title << "," << book.author << "," << book.ISBN << endl;
+//                checkedOutBooks.pop();
+//                checkedOutBooks.push(book);
+//            }
             outFile.close();
-            cout << "\t\tRecords written to file." << endl;
+//            cout << "\t\tRecords written to file." << endl;
         } else {
             cout << "\t\tError: Unable to open file." << endl;
         }
@@ -726,14 +726,14 @@ int main() {
             case 15: {
                 cout << "\t\tThank you for using the library. Goodbye!" << endl;
                 library.writeToFile("BookInLibrary.txt");
-                library.writeToFile_Re_usable("file_Re_Usable.txt");
+                library.writeToFile_Re_usable("savedData.txt");
                 library.clear();
                 break;
             }
             default: {
                 cout << "\t\tInvalid choice. Please try again." << endl;
                 library.writeToFile("BookInLibrary.txt");
-                library.writeToFile_Re_usable("file_Re_Usable.txt");
+                library.writeToFile_Re_usable("savedData.txt");
                 system("\t\tPAUSE");
                 break;
             }

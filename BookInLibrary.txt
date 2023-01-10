@@ -1,6 +1,6 @@
                                    LIBRARY MANAGEMENT SYSTEM          
 
-Data about existing books and returned books go to
+		Data about existing books and returned books go to
 Title==============================Author=============================ISBN===============================
 Art of Food                        Gin                                6                                  
 War Lord                           Alex                               13                                 
@@ -11,7 +11,8 @@ The Witcher                        Andrzej Sapkowski                  1
 Mat Biec                           Ngoc Anh                           3                                  
 
 
-Book data is still being borrowed
-The total number of books borrowed is: 1
+		Book data is still being borrowed
+		The total number of books borrowed is: 2
 Title==============================Author=============================ISBN===============================
+War Lord                           Alex                               13                                 
 The Witcher                        Andrzej Sapkowski                  1                                  
