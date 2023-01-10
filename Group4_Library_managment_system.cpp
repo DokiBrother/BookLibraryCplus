@@ -588,8 +588,8 @@ int main() {
         cout << "\t\tPress 3.  Return a book" << endl;
         cout << "\t\tPress 4.  Sort books by title" << endl;
         cout << "\t\tPress 5.  Sort books by author" << endl;
-        cout << "\t\tPress 6. Sort Checked Out Books By Title" << endl;
-        cout << "\t\tPress 7. Sort Checked Out Books By Author" << endl;
+        cout << "\t\tPress 6.  Sort Checked Out Books By Title" << endl;
+        cout << "\t\tPress 7.  Sort Checked Out Books By Author" << endl;
         cout << "\t\tPress 8.  Update a book" << endl;
         cout << "\t\tPress 9.  Delete a book" << endl;
         cout << "\t\tPress 10. Search for a book by title" << endl;
