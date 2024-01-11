@@ -1,0 +1,14 @@
+Hunger Game,Suzanne,2
+Twilight,Meyer,3
+Gone,Gilliian,7
+The Alchemist,Paulo,8
+The Catcher,Salinger,9
+Lord of Rings,Tolkien,10
+Kill a MockingBird,Harper Lee,11
+Mat biec,Ngoc Anh,16
+Voi vang,Xuan Dieu,17
+So do,Vu Trong Phung,18
+Song mon,Nam Cao,19
+Me chong,Kim,20
+Kite Runner,Hosseini,6
+Chronicles of Narnia,Lewis,15
